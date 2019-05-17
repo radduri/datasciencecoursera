@@ -12,11 +12,11 @@ Data Zip File Location: [UC Irvine Repo](https://d396qusza40orc.cloudfront.net/g
 
 Goal | Item | Link to Item
 --- | --- | ---
-Analysis R Script |  run_analysis.R |  [R Script Link]("run_analysis.R")
-Tidy Data Set |  Clean Data Set |  [Data Set Link]("tidyData.txt")
-Github Repo | Repo |  [Repo Link]("Click to go to Repo")
-Cookbook | CodeBook.md |  [Repo Link]( "CodeBook.md")
-README | ReadingItNow |  [Repo Link]("README.md")
+Analysis R Script |  run_analysis.R |  [R Script Link](https://github.com/radduri/datasciencecoursera/blob/master/03_Getting_And_Cleaning_Data/project/run_analysis.R "run_analysis.R")
+Tidy Data Set |  Clean Data Set |  [Data Set Link](https://github.com/radduri/datasciencecoursera/blob/master/03_Getting_And_Cleaning_Data/project/tidyData.txt "tidyData.txt")
+Github Repo | Repo |  [Repo Link](https://github.com/radduri/datasciencecoursera/tree/master/03_Getting_And_Cleaning_Data/project "Click to go to Repo")
+Cookbook | CodeBook.md |  [Repo Link](https://github.com/radduri/datasciencecoursera/blob/master/03_Getting_And_Cleaning_Data/project/CodeBook.md "CodeBook.md")
+README | ReadingItNow |  [Repo Link](https://github.com/radduri/datasciencecoursera/blob/master/03_Getting_And_Cleaning_Data/project/README.md "README.md")
 
 ## Contributors
 
