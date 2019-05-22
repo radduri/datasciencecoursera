@@ -7,19 +7,16 @@ unzip(zipfile = "dataFiles.zip")
 SCC <- data.table::as.data.table(x = readRDS(file = "Source_Classification_Code.rds"))
 NEI <- data.table::as.data.table(x = readRDS(file = "summarySCC_PM25.rds"))
 
-# Gather the subset of the NEI data which corresponds to vehicles
 condition <- grepl("vehicle", SCC[, SCC.Level.Two], ignore.case=TRUE)
 vehiclesSCC <- SCC[condition, SCC]
 vehiclesNEI <- NEI[NEI[, SCC] %in% vehiclesSCC,]
 
-# Subset the vehicles NEI data by each city's fip and add city name.
 vehiclesBaltimoreNEI <- vehiclesNEI[fips == "24510",]
 vehiclesBaltimoreNEI[, city := c("Baltimore City")]
 
 vehiclesLANEI <- vehiclesNEI[fips == "06037",]
 vehiclesLANEI[, city := c("Los Angeles")]
 
-# Combine data.tables into one data.table
 bothNEI <- rbind(vehiclesBaltimoreNEI,vehiclesLANEI)
 
 png("plot6.png")

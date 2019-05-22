@@ -13,7 +13,10 @@ summarySourceClassificationData[, Emissions := lapply(.SD, as.numeric), .SDcols 
 
 totalSSCD <- summarySourceClassificationData[, lapply(.SD, sum, na.rm = TRUE), .SDcols = c("Emissions"), by = year]
 
+png("plot1.png")
+
 barplot(totalSSCD[, Emissions]
         , names = totalSSCD[, year]
         , xlab = "Years", ylab = "Emissions"
         , main = "Emissions over the Years")
+dev.off()
