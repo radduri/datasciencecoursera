@@ -8,7 +8,6 @@ unzip(zipfile = "dataFiles.zip")
 sourceClassificationData <- data.table::as.data.table(x = readRDS(file = "Source_Classification_Code.rds"))
 summarySourceClassificationData <- data.table::as.data.table(x = readRDS(file = "summarySCC_PM25.rds"))
 
-# Prevents histogram from printing in scientific notation
 summarySourceClassificationData[, Emissions := lapply(.SD, as.numeric), .SDcols = c("Emissions")]
 
 totalSSCD <- summarySourceClassificationData[, lapply(.SD, sum, na.rm = TRUE), .SDcols = c("Emissions"), by = year]
