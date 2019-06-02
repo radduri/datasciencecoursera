@@ -1,0 +1,302 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Motor Trend MPG Data Analysis},
+            pdfauthor={Ram Mohan Rao Adduri},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Motor Trend MPG Data Analysis}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Ram Mohan Rao Adduri}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{May 31, 2019}
+
+
+\begin{document}
+\maketitle
+
+\emph{Created with knitr}
+
+\hypertarget{executive-summary}{%
+\paragraph{Executive Summary}\label{executive-summary}}
+
+This report analyzed the relationship between transmission type (manual
+or automatic) and miles per gallon (MPG). The report set out to
+determine which transmission type produces a higher MPG. The
+\texttt{mtcars} dataset was used for this analysis. A t-test between
+automatic and manual transmission vehicles shows that manual
+transmission vehicles have a 7.245 greater MPG than automatic
+transmission vehicles. After fitting multiple linear regressions,
+analysis showed that the manual transmission contributed less
+significantly to MPG, only an improvement of 1.81 MPG. Other variables,
+weight, horsepower, and number of cylinders contributed more
+significantly to the overall MPG of vehicles.
+
+\hypertarget{load-data}{%
+\paragraph{Load Data}\label{load-data}}
+
+Load the dataset and convert categorical variables to factors.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{data}\NormalTok{(mtcars)}
+\KeywordTok{head}\NormalTok{(mtcars, }\DataTypeTok{n=}\DecValTok{3}\NormalTok{)}
+\KeywordTok{dim}\NormalTok{(mtcars)}
+\NormalTok{mtcars}\OperatorTok{$}\NormalTok{cyl <-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{cyl)}
+\NormalTok{mtcars}\OperatorTok{$}\NormalTok{vs <-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{vs)}
+\NormalTok{mtcars}\OperatorTok{$}\NormalTok{am <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{am)}
+\NormalTok{mtcars}\OperatorTok{$}\NormalTok{gear <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{gear)}
+\NormalTok{mtcars}\OperatorTok{$}\NormalTok{carb <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{carb)}
+\KeywordTok{attach}\NormalTok{(mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exploratory-analysis}{%
+\paragraph{Exploratory Analysis}\label{exploratory-analysis}}
+
+\textbf{See Appendix Figure I} Exploratory Box graph that compares
+Automatic and Manual transmission MPG. The graph leads us to believe
+that there is a significant increase in MPG when for vehicles with a
+manual transmission vs automatic.
+
+\hypertarget{statistical-inference}{%
+\subparagraph{Statistical Inference}\label{statistical-inference}}
+
+T-Test transmission type and MPG
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{testResults <-}\StringTok{ }\KeywordTok{t.test}\NormalTok{(mpg }\OperatorTok{~}\StringTok{ }\NormalTok{am)}
+\NormalTok{testResults}\OperatorTok{$}\NormalTok{p.value}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.001373638
+\end{verbatim}
+
+The T-Test rejects the null hypothesis that the difference between
+transmission types is 0.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{testResults}\OperatorTok{$}\NormalTok{estimate}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## mean in group 0 mean in group 1 
+##        17.14737        24.39231
+\end{verbatim}
+
+The difference estimate between the 2 transmissions is 7.24494 MPG in
+favor of manual.
+
+\hypertarget{regression-analysis}{%
+\subparagraph{Regression Analysis}\label{regression-analysis}}
+
+Fit the full model of the data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fullModelFit <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(mpg }\OperatorTok{~}\StringTok{ }\NormalTok{., }\DataTypeTok{data =}\NormalTok{ mtcars)}
+\KeywordTok{summary}\NormalTok{(fullModelFit)  }\CommentTok{# results hidden}
+\KeywordTok{summary}\NormalTok{(fullModelFit)}\OperatorTok{$}\NormalTok{coeff  }\CommentTok{# results hidden}
+\end{Highlighting}
+\end{Shaded}
+
+Since none of the coefficients have a p-value less than 0.05 we cannot
+conclude which variables are more statistically significant.
+
+Backward selection to determine which variables are most statistically
+significant
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{stepFit <-}\StringTok{ }\KeywordTok{step}\NormalTok{(fullModelFit)}
+\KeywordTok{summary}\NormalTok{(stepFit) }\CommentTok{# results hidden}
+\KeywordTok{summary}\NormalTok{(stepFit)}\OperatorTok{$}\NormalTok{coeff }\CommentTok{# results hidden}
+\end{Highlighting}
+\end{Shaded}
+
+The new model has 4 variables (cylinders, horsepower, weight,
+transmission). The R-squared value of 0.8659 confirms that this model
+explains about 87\% of the variance in MPG. The p-values also are
+statistically significantly because they have a p-value less than 0.05.
+The coefficients conclude that increasing the number of cylinders from 4
+to 6 with decrease the MPG by 3.03. Further increasing the cylinders to
+8 with decrease the MPG by 2.16. Increasing the horsepower is decreases
+MPG 3.21 for every 100 horsepower. Weight decreases the MPG by 2.5 for
+each 1000 lbs increase. A Manual transmission improves the MPG by 1.81.
+
+\hypertarget{residuals-diagnostics}{%
+\paragraph{Residuals \& Diagnostics}\label{residuals-diagnostics}}
+
+Residual Plot \textbf{See Appendix Figure II}
+
+The plots conclude:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The randomness of the Residuals vs.~Fitted plot supports the
+  assumption of independence
+\item
+  The points of the Normal Q-Q plot following closely to the line
+  conclude that the distribution of residuals is normal
+\item
+  The Scale-Location plot random distribution confirms the constant
+  variance assumption
+\item
+  Since all points are within the 0.05 lines, the Residuals vs.~Leverage
+  concludes that there are no outliers
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sum}\NormalTok{((}\KeywordTok{abs}\NormalTok{(}\KeywordTok{dfbetas}\NormalTok{(stepFit)))}\OperatorTok{>}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\hypertarget{conclusion}{%
+\paragraph{Conclusion}\label{conclusion}}
+
+There is a difference in MPG based on transmission type. A manual
+transmission will have a slight MPG boost. However, it seems that
+weight, horsepower, \& number of cylinders are more statistically
+significant when determining MPG.
+
+\hypertarget{appendix-figures}{%
+\subsubsection{Appendix Figures}\label{appendix-figures}}
+
+\hypertarget{i}{%
+\paragraph{I}\label{i}}
+
+\includegraphics{motor_trend_mpg_data_analysis_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{ii}{%
+\paragraph{II}\label{ii}}
+
+\includegraphics{motor_trend_mpg_data_analysis_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+
+\end{document}
