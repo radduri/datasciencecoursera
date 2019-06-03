@@ -1,0 +1,7 @@
+base
+ggplot2
+plotly
+data.table
+tidyr
+lubridate
+zoo
