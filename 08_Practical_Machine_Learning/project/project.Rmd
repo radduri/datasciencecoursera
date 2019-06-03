@@ -13,11 +13,12 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE, fig.width=10, fig.height=5)
 options(width=120)
-
+Sys.setenv("R_MAX_VSIZE" = 8e9) 
 library(lattice)
 library(ggplot2)
 library(plyr)
 library(randomForest)
+
 ```
 
 ## Executive Summary
@@ -102,7 +103,7 @@ testing.cleaned <- testing.cleaned03
 Since the test set provided is the the ultimate validation set, we will split the current training in a test and train set to work with.
 
 ```{r}
-set.seed(19791108)
+set.seed(3333)
 library(caret)
 
 classeIndex <- which(names(training.cleaned) == "classe")
