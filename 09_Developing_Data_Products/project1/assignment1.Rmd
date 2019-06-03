@@ -1,0 +1,30 @@
+---
+title: "Assignment1"
+author: "Ram Mohan Rao Adduri"
+data: "03 June 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+```
+
+
+
+## My First Map
+
+``` {r, echo=FALSE}
+library(leaflet)
+
+my_icon <-makeIcon(iconUrl="https://www.svgrepo.com/show/13516/home-map-location.svg", iconWidth=31*221/230, iconHeight=31, iconAnchorX= 31*221/230/2, iconAnchorY=16)
+
+
+my_map <-leaflet()%>% addTiles()%>%addMarkers(lat=25.173213, lng=51.593631, popup="Ram Home", icon=my_icon)
+my_map
+
+
+
+```
+ 
