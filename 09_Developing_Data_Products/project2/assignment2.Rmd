@@ -34,10 +34,8 @@ library(zoo)
 # The source data sets are not included in this repository.
 # To reproduce this presentation, you will first need to download the two
 # following zipped data sets:
-# - All STATS19 data (accident, casualties and vehicle tables) for 2017", from
-#   https://data.gov.uk/dataset/road-accidents-safety-data/resource/8ecee6ac-33fd-4f5b-8973-e900cc65d24a)
 # - Road Safety - Accidents 2017, from
-#   https://data.gov.uk/dataset/road-accidents-safety-data/resource/ceb00cff-443d-4d43-b17a-ee13437e9564)
+#   http://data.dft.gov.uk.s3.amazonaws.com/road-accidents-safety-data/dftRoadSafetyData_Accidents_2017.zip)
 # Then extract the `Acc.csv` files from
 # the zip files in a subdirectory named `data`.
 
@@ -116,7 +114,7 @@ plot_ly(accident_count) %>%
 
 ### Source code
 
-- The R Markdown source code of this presentation can be found in [this GitHub repository]().
+- The R Markdown source code of this presentation can be found in [this GitHub repository](https://github.com/radduri/datasciencecoursera/tree/master/09_Developing_Data_Products/project2).
 
 ### Data source and licence
 
