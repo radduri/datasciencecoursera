@@ -85,10 +85,10 @@ shinyUI(
                         p("Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391-411.")
                ),
                tabPanel("Go back to my Github repository",
-                        a("https://github.com/radduri?tab=repositories"),
+                        a("https://github.com/radduri/datasciencecoursera/tree/master/09_Developing_Data_Products/project3"),
                         hr(),
                         h2("I hope you like the My First Shiny App"),
-                        h2("The name of the repositorie is DataProducts")
+                        h2("The name of the repositorie is datasciencecoursera->project3")
                )
     )
 )

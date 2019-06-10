@@ -1,0 +1,10 @@
+name: myfirstapp
+title:
+username:
+account: rammohan
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 970882
+bundleId: 2138320
+url: https://rammohan.shinyapps.io/myfirstapp/
+when: 1559928067.40797

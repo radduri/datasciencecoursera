@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/501777/543b74e1441a451abe6a5f7062ab4132
+bundleId: https://api.rpubs.com/api/v1/document/501777/543b74e1441a451abe6a5f7062ab4132
+url: http://rpubs.com/radduri/501777
+when: 1559676511.04831

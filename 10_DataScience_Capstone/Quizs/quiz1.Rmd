@@ -1,0 +1,17 @@
+---
+title: "quiz1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+1. The en_US.blogs.txt |en_US.blogs.txt file is how many megabytes?
+
+```{r Question 1}
+f1 <- file.info("data/en_US/en_US.blogs.txt")
+fileMb <- (f1$size)/1000000
+fileMb
+```
